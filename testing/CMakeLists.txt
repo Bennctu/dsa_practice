@@ -10,3 +10,5 @@ target_link_libraries(Linkedlist
   PUBLIC
   # interview ##static_lib
 )
+
+add_executable(MazeTest ${CMAKE_CURRENT_SOURCE_DIR}/maze_test.cpp)
