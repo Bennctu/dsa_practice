@@ -12,3 +12,4 @@ target_link_libraries(Linkedlist
 )
 
 add_executable(MazeTest ${CMAKE_CURRENT_SOURCE_DIR}/maze_test.cpp)
+add_executable(BET ${CMAKE_CURRENT_SOURCE_DIR}/binarytree_test.cpp)
