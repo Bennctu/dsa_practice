@@ -13,25 +13,12 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-  set(CMAKE_CXX_FLAGS "-std=c++14 -g3 -Wall")
+  set(CMAKE_CXX_FLAGS "-std=c++14 -g3 -Wall -fsanitize=address")
   message("flag:" ${CMAKE_CXX_FLAGS})
 endif()
 
-#eigen
-# find_package( Eigen3 3.3 REQUIRED)
-# message(STATUS "Eigen3 lib is found:" ${EIGEN3_INCLUDE_DIR})
-# #opencv
-# find_package( OpenCV REQUIRED )
-# message(STATUS "Opencv lib is found:" ${OpenCV_INCLUDE_DIRS})
-
-# if(NOT TARGET eigen)
-#   add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/eigen-3.4.0)
-# endif()
-
 #link
 set( LINK_INCLUDE_DIRS
-  # ${EIGEN3_INCLUDE_DIR}
-  # ${OpenCV_INCLUDE_DIRS}
   ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
   
@@ -52,10 +39,6 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-  # ${LINK_LIBS}
-  # if(NOT TARGET eigen)
-  #   eigen
-  # endif()
 )
 
 add_subdirectory(./testing)
